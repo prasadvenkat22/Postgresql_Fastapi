@@ -1,0 +1,14 @@
+python -m pip install SQLAlchemy FastAPI-SQLAlchemy
+alembic init alembic
+alembic upgrade head
+
+docker build -t fastapi-web .
+docker-compose build
+docker-compose up -d
+docker-compose run app alembic revision --autogenerate -m "First migration"
+
+--git commands
+--git clone
+--git add .
+--git commit -m "info"
+git push -u origin
