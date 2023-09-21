@@ -12,3 +12,16 @@ docker-compose run app alembic revision --autogenerate -m "First migration"
 --git add .
 --git commit -m "info"
 git push -u origin
+
+
+#DATABASE_URL= "postgresql://postgres:Eshwar333@database-1.conlq7xqxx5d.us-east-1.rds.amazonaws.com:5432"
+
+#DATABASE_URL= "postgresql://postgres:Eshwar333@pgdb:5432/admin"
+#DATABASE_URL="postgresql://postgres:Eshwar333@database-1.conlq7xqxx5d.us-east-1.rds.amazonaws.com/postgres"
+DATABASE_URL="postgresql://postgres:Eshwar333@database-1.cluster-cpdko7hfm984.us-east-2.rds.amazonaws.com/postres"
+
+DB_USER=postgres
+DB_PASSWORD=Eshwar333
+DB_NAME=postgres 
+PGADMIN_EMAIL=admin@admin.com
+PGADMIN_PASSWORD=Eshwar333
