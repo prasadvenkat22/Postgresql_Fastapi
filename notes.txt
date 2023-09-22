@@ -12,3 +12,39 @@ docker-compose run app alembic revision --autogenerate -m "First migration"
 --git add .
 --git commit -m "info"
 git push -u origin
+
+------------------------
+#DATABASE_URL= "postgresql://postgres:Eshwar333@database-1.conlq7xqxx5d.us-east-1.rds.amazonaws.com:5432"
+
+#DATABASE_URL= "postgresql://postgres:Eshwar333@pgdb:5432/admin"
+#DATABASE_URL="postgresql://postgres:Eshwar333@database-1.conlq7xqxx5d.us-east-1.rds.amazonaws.com/postgres"
+DATABASE_URL="postgresql://postgres:Eshwar333@database-1.cluster-cpdko7hfm984.us-east-2.rds.amazonaws.com/postres"
+
+DB_USER=postgres
+DB_PASSWORD=Eshwar333
+DB_NAME=postgres 
+PGADMIN_EMAIL=admin@admin.com
+PGADMIN_PASSWORD=Eshwar333
+-----------------------------
+
+
+database-1.cluster-cpdko7hfm984.us-east-2.rds.amazonaws.com
+
+psql --host=database-1.cluster-cpdko7hfm984.us-east-2.rds.amazonaws.com --port=5432 --dbname=postgres --username=postgres
+
+ 
+ssh -i /Users/vetangir/Downloads/fast-api-web-arora.pem ubuntu@18.221.249.170
+
+scp -i /Users/vetangir/Downloads/fast-api-web-arora.pem -r /Postgresql_Fastapi ubuntu@18.221.249.170:/home/ubuntu/
+
+scp -i /Users/vetangir/Downloads/fast-api-web-arora.pem /Postgresql_Fastapi/main.py ubuntu@18.221.249.170:/home/ubuntu/Postgresql_Fastapi/
+
+scp -i /Users/vetangir/Downloads/fast-api-web-arora.pem /Postgresql_Fastapi/main.py ubuntu@18.221.249.170:/home/ubuntu/Postgresql_Fastapi/
+
+scp -i /Users/vetangir/Downloads/fast-api-web-arora.pem /Postgresql_Fastapi/.env ubuntu@18.221.249.170:/home/ubuntu/Postgresql_Fastapi/
+
+
+
+
+
+
