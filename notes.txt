@@ -31,19 +31,31 @@ PGADMIN_PASSWORD=Eshwar333
 database-1.cluster-cpdko7hfm984.us-east-2.rds.amazonaws.com
 
 psql --host=database-1.cluster-cpdko7hfm984.us-east-2.rds.amazonaws.com --port=5432 --dbname=postgres --username=postgres
-
  
-ssh -i /Users/vetangir/Downloads/fast-api-web-arora.pem ubuntu@18.221.249.170
+ssh -i ~/Downloads/fast-api-postgreql.pem ubuntu@44.204.13.11
 
-scp -i /Users/vetangir/Downloads/fast-api-web-arora.pem -r /Postgresql_Fastapi ubuntu@18.221.249.170:/home/ubuntu/
+scp -i ~/Downloads/fast-api-postgreql.pem -r /Postgresql_Fastapi ubuntu@44.204.13.11:/home/ubuntu/
 
-scp -i /Users/vetangir/Downloads/fast-api-web-arora.pem /Postgresql_Fastapi/main.py ubuntu@18.221.249.170:/home/ubuntu/Postgresql_Fastapi/
+scp -i ~/Downloads/fast-api-postgreql.pem /Postgresql_Fastapi/main.py ubuntu@44.204.13.11:/home/ubuntu/Postgresql_Fastapi/
 
-scp -i /Users/vetangir/Downloads/fast-api-web-arora.pem /Postgresql_Fastapi/main.py ubuntu@18.221.249.170:/home/ubuntu/Postgresql_Fastapi/
+scp -i ~/Downloads/fast-api-postgreql.pem /Postgresql_Fastapi/main.py ubuntu@44.204.13.11:/home/ubuntu/Postgresql_Fastapi/
 
-scp -i /Users/vetangir/Downloads/fast-api-web-arora.pem /Postgresql_Fastapi/.env ubuntu@18.221.249.170:/home/ubuntu/Postgresql_Fastapi/
+scp -i ~/Downloads/fast-api-postgreql.pem /Postgresql_Fastapi/.env ubuntu@44.204.13.11:/home/ubuntu/Postgresql_Fastapi/
 
+sudo apt update && sudo apt upgrade -y
 
+sudo apt install ca-certificates curl gnupg lsb-release
+sudo apt install ca-certificates curl gnupg lsb-release
+sudo mkdir -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+docker -v
+systemctl status docker --no-pager -l
+sudo usermod -aG docker $USER
+id $USER
+newgrp docker
 
 
 

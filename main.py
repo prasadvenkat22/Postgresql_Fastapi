@@ -11,11 +11,25 @@ import pandas as pd
 import time, datetime
 from numpy import genfromtxt
 from passlib.context import CryptContext
-import db_router,dbfile_router
+import db_router,dbfile_router, image_router
+from fastapi.middleware.cors import CORSMiddleware
+
 app = FastAPI()
+origins = ["*"]
+methods = ["*"]
+headers = ["*"]
+app.add_middleware(
+    CORSMiddleware, 
+    allow_origins = origins,
+    allow_credentials = True,
+    allow_methods = methods,
+    allow_headers = headers    
+)
+
+
 app.include_router(db_router.router)
 app.include_router(dbfile_router.router)
-
+app.include_router(image_router.router)
 models.Base.metadata.create_all(bind=engine)
 def get_db():
     db= SessionLocal()

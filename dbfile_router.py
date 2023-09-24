@@ -13,7 +13,7 @@ from numpy import genfromtxt
 from fastapi import APIRouter
 
 router = APIRouter(
-    prefix = '/FileOps',
+    prefix = '/DBOps',
     tags = ['Data Loading']
 )
  
