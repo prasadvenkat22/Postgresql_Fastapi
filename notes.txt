@@ -55,8 +55,5 @@ docker -v
 systemctl status docker --no-pager -l
 sudo usermod -aG docker $USER
 id $USER
-newgrp docker
-
-
-
+newgrp docke
 
